@@ -73,7 +73,7 @@ namespace ABCPharmacy.Controllers
                 totalFees += (double)item["Fees"];
             }
 
-            msg = "Total Fees: " + totalFees.ToString("c") + "<br/>Total Consultations: " + dt.Rows.Count;
+            msg = "<b>Total Fees: " + totalFees.ToString("c") + "</b>" + "<br/><b>Total Consultations: " + dt.Rows.Count + "</b>";
 
 
             dt.Columns.Add("Age", typeof(int));
@@ -119,7 +119,7 @@ namespace ABCPharmacy.Controllers
 
             }
             msg += "<br/>";
-            msg += $"<table border='1'><tr><th/><th>0-9</th><th>10-21</th><th>21 Above</th></tr><tr><td>Fees</td><td>{feesCollectedBelow10}</td><td>{feesCollectedBelow22}</td><td>{feesCollected22Above}</td></tr><tr><td>Consultations</td><td>{numOfConsultationsBelow10}</td><td>{numOfConsultationsBelow22}</td><td>{numOfConsultations22Above}</td></tr></table>";
+            msg += $"<table border='1'><tr><th>Category <th/><th>0-9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>10-21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>21 Above</th></tr><tr><td>Fees</td><td/><td>{feesCollectedBelow10}</td><td>{feesCollectedBelow22}</td><td>{feesCollected22Above}</td></tr><tr><td>Consultations</td><td /><td>{numOfConsultationsBelow10}</td><td>{numOfConsultationsBelow22}</td><td>{numOfConsultations22Above}</td></tr></table>";
 
 
             return Json(new { Status = "Success", Msg = msg });
